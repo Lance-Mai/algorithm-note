@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.prefixsum;
 
 /**
  * 前缀和数组
@@ -8,10 +8,10 @@ package labuladong;
  * 2、前缀和只适合逆运算场景。即可以通过 x + 2 = 5推导出x = 3，如果是 max(x,8) = 8，解不出x的值，前缀和也就不适用了
  * 以上这两个局限性，可以使用“线段树”来解决
  */
-class NumArray {
+class NumArray_303 {
     int[] preSum;
 
-    public NumArray(int[] nums) {
+    public NumArray_303(int[] nums) {
         preSum = new int[nums.length + 1];
         preSum[0] = 0;
         for (int i = 1; i < nums.length + 1; i++) {
