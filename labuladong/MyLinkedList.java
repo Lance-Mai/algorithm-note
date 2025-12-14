@@ -75,7 +75,9 @@ public class MyLinkedList {
 
     }
 
-    public class ListNode {
+    // 静态内部类，可以让ListNode与其外部类MyLinkedList解绑定，相互独立，即逻辑上有归属但是相互独立，想创建多少个ListNode实例都可以
+    // 当static修饰方法或变量时，方法/变量则变成该类的所有实例共享
+    private static class ListNode {
         int val;
         ListNode next;
 
