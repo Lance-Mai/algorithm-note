@@ -40,5 +40,4 @@ public class MatrixBlockSum_1314 {
         }
         return answer;
     }
-
 }
