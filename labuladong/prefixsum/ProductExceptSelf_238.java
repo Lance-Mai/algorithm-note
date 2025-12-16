@@ -5,6 +5,7 @@ package labuladong.prefixsum;
  * 花了25分钟，没有想到解决方法
  * 看了题解思路后，才发现没有好好审题，题目中给出提示，前缀乘积 和 后缀乘积
  * 最终花了45分钟，搞定了这道题
+ * 挑战：O(1)的额外空间复杂度 => 不会
  */
 public class ProductExceptSelf_238 {
     public int[] productExceptSelf(int[] nums) {
