@@ -1,8 +1,6 @@
 package labuladong.prefixsum;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * 连续数组（前缀和与哈希表的结合）
@@ -13,6 +11,8 @@ import java.util.List;
  * 如何快速从一个数组中得到其最大元素和最小元素的差值。
  * 我分析发现，其实map中存的value即list，天然就是一个有序数组，不用在排序啦。不排序后提速了，但还是不够。
  * 最终解决方案：凭借着indexList的天然升序的特点，我在遍历数组nums组装prefix过程中，就会进行maxLen的比较。最终性能打败了90%用户
+ * 更新：prefix可以作为一个单int变量，而不用成为一个数组 ==> 优化内存消耗，从击败5%提升到击败41%
+ * 更新：map中的value可以是一个变量，而不是数组，又可以优化内存消耗 ==> 很奇怪，内存消耗反而多了，不过性能更强了
  */
 public class FindMaxLength_525 {
     public int findMaxLength(int[] nums) {
@@ -24,21 +24,19 @@ public class FindMaxLength_525 {
             }
         }
         // 使用map记录相同前缀和的下标
-        HashMap<Integer, List<Integer>> prefixMapIndex = new HashMap<>();
+        HashMap<Integer, Integer> prefixMapIndex = new HashMap<>();
         // int[] prefix = new int[n + 1];
         int prefix = 0;
-        int index = 0;
-        prefixMapIndex.put(prefix, new ArrayList<>(List.of(index)));
+        Integer index = 0;
+        prefixMapIndex.put(prefix, index);
         int maxLen = 0;
         for (int i = 1; i <= n; i++) {
             prefix = prefix + nums[i - 1];
-            List<Integer> indexList = prefixMapIndex.get(prefix);
-            if (indexList == null) {
-                indexList = new ArrayList<>();
-                indexList.add(i);
-                prefixMapIndex.put(prefix, indexList);
+            Integer indexVal = prefixMapIndex.get(prefix);
+            if (indexVal == null) {
+                prefixMapIndex.put(prefix, i);
             } else {
-                maxLen = Math.max(maxLen, i - indexList.getFirst());
+                maxLen = Math.max(maxLen, i - indexVal);
             }
         }
         return maxLen;
