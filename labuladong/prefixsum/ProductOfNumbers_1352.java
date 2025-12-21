@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 最后K个数的乘积
+ * 最后K个数的乘积（思路经常复习）
  * 难点：每次add数字时，都要更新表格
  * 刚开始不追求一蹴而就，可以先用简单方法，理清思路，后面再做优化
  * 做了1h10min，没做明白！！！
