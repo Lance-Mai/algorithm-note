@@ -5,11 +5,11 @@ import java.util.LinkedList;
 /**
  * 用栈实现队列。15分钟解决，分别用两个LinkedList来模拟， pushStack、popStack
  */
-public class MyQueue {
+public class MyQueue_232 {
     LinkedList<Integer> pushStack, popStack;
     int size;
 
-    public MyQueue() {
+    public MyQueue_232() {
         pushStack = new LinkedList<>();
         popStack = new LinkedList<>();
         size = 0;

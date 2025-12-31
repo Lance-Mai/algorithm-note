@@ -9,11 +9,11 @@ import java.util.LinkedList;
  * 2、使用栈的size做遍历时，注意先创建一个临时变量，在使用临时变量去遍历，
  * 而不是使用queue.size()，因为remove过程中size会变化
  */
-public class MyStack {
+public class MyStack_225 {
     LinkedList<Integer> queue1, queue2;
     int size;
 
-    public MyStack() {
+    public MyStack_225() {
         queue1 = new LinkedList<>();
         queue2 = new LinkedList<>();
         size = 0;

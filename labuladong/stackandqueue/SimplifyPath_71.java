@@ -8,7 +8,7 @@ import java.util.LinkedList;
  * 注意if的嵌套逻辑 if ("..".equals(segment)) {
  * if (!stack.isEmpty()) {}   不等价于 if ("..".equals(segment) && !stack.isEmpty())
  */
-public class SimplifyPath {
+public class SimplifyPath_71 {
     // private static final char SLASH = '/';
     // private final char DOT = '.';
 
