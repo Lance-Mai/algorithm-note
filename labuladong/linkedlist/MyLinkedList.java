@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.linkedlist;
 
 
 /**

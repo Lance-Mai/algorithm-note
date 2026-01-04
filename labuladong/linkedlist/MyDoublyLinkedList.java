@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.linkedlist;
 
 /**
  * 双链表
@@ -18,6 +18,7 @@ public class MyDoublyLinkedList {
         int val;
         Node next;
         Node pre;
+
         Node(int val) {
             this.val = val;
         }
@@ -182,7 +183,6 @@ public class MyDoublyLinkedList {
         }
         return cur;
     }
-
 
 
     private void display() {
